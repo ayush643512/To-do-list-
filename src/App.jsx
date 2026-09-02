@@ -436,7 +436,17 @@ function FloatingChip({ children, className, style, delay = 0 }) {
 /*                              MAIN APP                               */
 /* ================================================================== */
 export default function App() {
-  const [tasks, setTasks] = useState(seedTasks);
+  const [tasks, setTasks] = useState(() => {
+  try {
+    const savedTasks = localStorage.getItem("todo_tasks");
+    return savedTasks ? JSON.parse(savedTasks) : seedTasks;
+  } catch {
+    return seedTasks;
+  }
+});
+  useEffect(() => {
+  localStorage.setItem("todo_tasks", JSON.stringify(tasks));
+}, [tasks]);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
