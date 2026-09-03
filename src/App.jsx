@@ -43,16 +43,7 @@ const addDays = (n) => {
   return d.toISOString().slice(0, 10);
 };
 
-const seedTasks = [
-  { id: "t1", title: "Ship DO3 landing page", description: "Finalize hero section and floating dashboard visual.", dueDate: todayISO(), dueTime: "10:00", priority: "High", category: "Work", important: true, completed: false, subtasks: ["Hero copy", "3D card", "Responsive pass"] },
-  { id: "t2", title: "Morning run", description: "5km around the block before it gets hot.", dueDate: todayISO(), dueTime: "06:30", priority: "Medium", category: "Health", important: false, completed: true, subtasks: [] },
-  { id: "t3", title: "Review pull requests", description: "Two PRs waiting on the task-card refactor.", dueDate: todayISO(), dueTime: "14:00", priority: "High", category: "Work", important: false, completed: false, subtasks: ["PR #124", "PR #126"] },
-  { id: "t4", title: "Read ML paper", description: "Skim the attention mechanisms survey for the seminar.", dueDate: addDays(1), dueTime: "19:00", priority: "Low", category: "Study", important: false, completed: false, subtasks: [] },
-  { id: "t5", title: "Grocery run", description: "Milk, eggs, coffee, and something for dinner.", dueDate: addDays(-1), dueTime: "18:00", priority: "Medium", category: "Errands", important: false, completed: false, subtasks: [] },
-  { id: "t6", title: "Book dentist appointment", description: "Overdue for a checkup — call before noon.", dueDate: addDays(-2), dueTime: "09:00", priority: "Medium", category: "Health", important: true, completed: false, subtasks: [] },
-  { id: "t7", title: "Portfolio write-up", description: "Draft the case study for the DO3 project.", dueDate: addDays(3), dueTime: "11:00", priority: "Low", category: "Personal", important: false, completed: false, subtasks: ["Outline", "Screenshots"] },
-  { id: "t8", title: "Team stand-up", description: "Quick sync on sprint progress.", dueDate: todayISO(), dueTime: "09:30", priority: "High", category: "Work", important: false, completed: true, subtasks: [] },
-];
+const seedTasks = [];
 
 const WEEKLY_HISTORY = [
   { day: "Mon", done: 4 }, { day: "Tue", done: 6 }, { day: "Wed", done: 3 },
